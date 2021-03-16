@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-Playbook 1: pentest.yml
+Playbook 1: *[playbook](Ansible/pentest.yml) - Script for installing DVWA servers
 ```
 ---
 - name: Config Web VM with Docker
@@ -44,7 +44,7 @@ Playbook 1: pentest.yml
       enabled: yes
 ```
 
-Playbook 2: elksetup.yml
+Playbook 2: *[Elk Setup](Ansible/elksetup.yml) - Script for installing ELK servers 
 ```
 ---
 - name: Configure Elk VM with Docker
@@ -100,7 +100,7 @@ Playbook 2: elksetup.yml
 
 
 ```
-Playbook 3: filebeatinstall.yml
+Playbook 3: *[Filebeat PB](Ansible/filebeatinstall.yml) - Script for Installing and cofiguring Filebeat on ELK and DVWA servers
 ```
 ---
 - name: installing and launching filebeat
@@ -216,6 +216,7 @@ Question: Specify which Beats you successfully installed
 - Filebeat
 
 These Beats allow us to collect the following information from each machine:
+
 Question: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
 - Filebeat allows us to collects logs from Virtual Machines that have the filebeat installed and sends the information to the ELK
 
@@ -224,7 +225,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook file to Docker Container that has Ansible intalled.
-- Update the /etc/ansible/hosts file to include elk servers
+- Update the /etc/ansible/hosts file to include elk servers (see excerpt below)
 - Update /etc/ansible/files/filebeat-config.yml
 ```
 output.elasticsearch:
@@ -240,11 +241,17 @@ host: "10.1.0.4:5601"
 
 - Run the playbook, and navigate toto check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-Question: Which file is the playbook? Where do you copy it?
-- filebeatinstall.yml is the file, /etc/ansible
-Question: Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-- 
+Question: Which file is the playbook? The playbook file is:
+- *[File Beat](Ansible/filebeatinstall.yml)
+
+Question: Where do you copy it?
+- /etc/ansible
+
+Question: Which file do you update to make Ansible run the playbook on a specific machine?
+- /etc/ansible/hosts.cfg
+
+How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+- In /etc/ansible/hosts.cfg you enter the information  
 ```
 [webservers]
 10.0.0.8 ansible_python_interpreter=/usr/bin/python3
@@ -256,4 +263,4 @@ Question: Which file do you update to make Ansible run the playbook on a specifi
 
 
 Question: Which URL do you navigate to in order to check that the ELK server is running?
-http://13.78.222.56:5601/app/kibana#/
+http://13.78.222.56:5601/app/kibana#/ - http://<public-ip>:5601
