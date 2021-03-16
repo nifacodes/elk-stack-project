@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-Playbook 1: *[playbook](Ansible/pentest.yml) - Script for installing DVWA servers
+Playbook 1: [dockerdvwa.yml](Ansible/pentest.yml) - Script for installing DVWA servers
 ```
 ---
 - name: Config Web VM with Docker
@@ -44,7 +44,7 @@ Playbook 1: *[playbook](Ansible/pentest.yml) - Script for installing DVWA server
       enabled: yes
 ```
 
-Playbook 2: *[Elk Setup](Ansible/elksetup.yml) - Script for installing ELK servers 
+Playbook 2: [elksetup.yml](Ansible/elksetup.yml) - Script for installing ELK servers 
 ```
 ---
 - name: Configure Elk VM with Docker
@@ -100,7 +100,7 @@ Playbook 2: *[Elk Setup](Ansible/elksetup.yml) - Script for installing ELK serve
 
 
 ```
-Playbook 3: *[Filebeat PB](Ansible/filebeatinstall.yml) - Script for Installing and cofiguring Filebeat on ELK and DVWA servers
+Playbook 3: [filebeatinstall.yml](Ansible/filebeatinstall.yml) - Script for Installing and cofiguring Filebeat on ELK and DVWA servers
 ```
 ---
 - name: installing and launching filebeat
@@ -242,7 +242,7 @@ host: "10.1.0.4:5601"
 - Run the playbook, and navigate toto check that the installation worked as expected.
 
 Question: Which file is the playbook? The playbook file is:
-- *[File Beat](Ansible/filebeatinstall.yml)
+- [filebeatinstall.yml](Ansible/filebeatinstall.yml)
 
 Question: Where do you copy it?
 - /etc/ansible
@@ -263,4 +263,5 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 
 Question: Which URL do you navigate to in order to check that the ELK server is running?
-http://13.78.222.56:5601/app/kibana#/ - http://<public-ip>:5601
+http://13.78.222.56:5601/app/kibana#/ 
+- Generic: http://<public-ip>:5601
