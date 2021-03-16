@@ -264,4 +264,4 @@ How do I specify which machine to install the ELK server on versus which to inst
 
 Question: Which URL do you navigate to in order to check that the ELK server is running?
 http://13.78.222.56:5601/app/kibana#/ 
-- Generic: http://<public-ip>:5601
+- Generic: http://(publicipelkserver):5601
