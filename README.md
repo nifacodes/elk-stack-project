@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-(Images/Network-Diagram-Week-13.png)
+![Screenshot](Images/Network-Diagram-Week-13.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -151,6 +151,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 
 Question: What does Filebeat watch for?
   - It watches monitor log files
+
 Question: What does Metricbeat record?
   - It records system-level CPU, memory, file system, disk IO, and network IO statistics. Essentially, it monitors for every process running on an operating system 
 
@@ -202,7 +203,7 @@ Question: In 3-5 bullets, explain the steps of the ELK installation play. E.g., 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Images/docker-ps-elk.png)
+![Screenshot](Images/docker-ps-elk.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
